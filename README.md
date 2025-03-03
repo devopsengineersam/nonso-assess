@@ -28,10 +28,10 @@ The node application is first being build using dockerfile, the image pushed to 
 ```
 
 ```
-./test-app
+./test-app   #is the directory of the working application.
 ```
 
-is the directory of the working application.
+
 
 
 Here’s the updated `README.md` file with a reference to the `architecture.png` diagram. Make sure you have an `architecture.png` file in the root of your project that visually represents the architecture of your application.
