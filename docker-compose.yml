@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    environment:
+      MYSQL_DATABASE: ${DB}
+      MYSQL_USER: ${DBUSER}
+      MYSQL_PASSWORD: ${DBPASS}
+      MYSQL_ROOT_PASSWORD: ${DBPASS}
+    ports:
+      - "${DBPORT}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  # API Service
+  api:
+    build:
+      context: ./api # Path to the API app directory
+      dockerfile: Dockerfile.api
+    container_name: node_api
+    environment:
+      PORT: ${API_PORT}
+      DB: ${DB}
+      DBUSER: ${DBUSER}
+      DBPASS: ${DBPASS}
+      DBHOST: db # Use the service name as the host
+      DBPORT: 3306
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # Web Service
+  web:
+    build:
+      context: ./web # Path to the web app directory
+      dockerfile: Dockerfile.web
+    container_name: node_web
+    environment:
+      PORT: ${WEB_PORT}
+      API_HOST: http://api:${API_PORT} # Use the service name as the host
+    ports:
+      - "${WEB_PORT}:${WEB_PORT}"
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+# Define volumes and networks
+volumes:
+  mysql_data:
+
+networks:
+  app-network:
+    driver: bridge
