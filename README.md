@@ -10,6 +10,8 @@ web <=> api   <=>       db
 
 The folders `applications/web` and `applications/api` respectively describe how to install and run each app.
 
+The folders `infra/eks` and `infra/rds` describe the EKS Terraform and RDS Terraform infrastructure to be provisioned on AWS cloud.
+
 
 Here is how to deploy the infrastucture and deploy the application....
 
