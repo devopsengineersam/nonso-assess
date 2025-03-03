@@ -3,7 +3,9 @@ This repo contains code for a Node.js multi-tier application and infrastucture t
 
 
 ```
-web <=> api <=> db
+
+[EKS CLUSTER]      [RDS INSTANCE]
+web <=> api   <=>       db
 ```
 
 The folders `applications/web` and `applications/api` respectively describe how to install and run each app.
