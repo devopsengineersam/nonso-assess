@@ -12,3 +12,21 @@ The folders `applications/web` and `applications/api` respectively describe how 
 
 
 Here is how to deploy the infrastucture and deploy the application....
+
+The Terraform infrastructure is being deployed with the github workflow pipeline:
+
+```
+.github/workflows/deploy-infra.yml
+```
+
+The node application is first being build using dockerfile, the image pushed to ECR then the application packed using helm and deployed to EKS cluster
+
+```
+.github/workflows/deploy-app.yml
+```
+
+```
+./test-app
+```
+
+is the directory of the working application.
