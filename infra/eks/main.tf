@@ -5,10 +5,11 @@ terraform {
         version = "5.89.0"
     }
   }
-#   backend "s3" {
-#     bucket = "toptal-assess-bucket"
-#     region = "us-east-1"
-#   }
+  backend "s3" {
+    bucket = "toptal-assess-bucket"
+    key = "nonso-assess-tf-bucket/eks"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {

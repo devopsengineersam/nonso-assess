@@ -138,9 +138,3 @@ resource "aws_iam_role_policy_attachment" "eks_node_group_AmazonEKS_CNI_Policy" 
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
   role       = aws_iam_role.eks_node_group_role.name
 }
-
-# Output the EKS cluster name
-output "eks_cluster_name" {
-  value = aws_eks_cluster.eks_cluster.name
-  description = "The name of the EKS Cluster"
-}

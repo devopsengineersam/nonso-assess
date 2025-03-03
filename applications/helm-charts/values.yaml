@@ -1,0 +1,27 @@
+web:
+  image: your-web-image
+  tag: latest
+  port: 3000
+  replicaCount: 2
+
+api:
+  image: your-api-image
+  tag: latest
+  port: 4000
+  replicaCount: 2
+  db:
+    host: nonso-db.abc123.us-west-2.rds.amazonaws.com # Replace with your RDS endpoint
+    name: mydatabase
+    user: admin
+    password: yourpassword
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  hosts:
+    - host: nonso-app.example.com # Replace with your domain
+      paths:
+        - /web
+        - /api
