@@ -7,9 +7,7 @@ services:
     container_name: mysql_db
     environment:
       MYSQL_DATABASE: ${DB}
-      MYSQL_USER: ${DBUSER}
-      MYSQL_PASSWORD: ${DBPASS}
-      MYSQL_ROOT_PASSWORD: ${DBPASS}
+      MYSQL_ROOT_PASSWORD: ${DBPASS} # Use MYSQL_ROOT_PASSWORD for the root user
     ports:
       - "${DBPORT}:3306"
     volumes:
@@ -26,7 +24,7 @@ services:
     environment:
       PORT: ${API_PORT}
       DB: ${DB}
-      DBUSER: ${DBUSER}
+      DBUSER: root # Use root as the DB user
       DBPASS: ${DBPASS}
       DBHOST: db # Use the service name as the host
       DBPORT: 3306
