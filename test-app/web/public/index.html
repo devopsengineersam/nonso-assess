@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Catalog App</h1>
+  <form id="itemForm">
+    <input type="text" id="name" placeholder="Item Name" required>
+    <textarea id="description" placeholder="Item Description" required></textarea>
+    <button type="submit">Add Item</button>
+  </form>
+  <h2>Items</h2>
+  <ul id="itemList"></ul>
+  <script>
+    const form = document.getElementById('itemForm');
+    const itemList = document.getElementById('itemList');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const description = document.getElementById('description').value;
+
+      const response = await fetch('/add-item', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, description }),
+      });
+
+      if (response.ok) {
+        fetchItems();
+        form.reset();
+      }
+    });
+
+    async function fetchItems() {
+      const response = await fetch('/items');
+      const items = await response.json();
+      itemList.innerHTML = items.map(item => `
+        <li><strong>${item.name}</strong>: ${item.description}</li>
+      `).join('');
+    }
+
+    fetchItems();
+  </script>
+</body>
+</html>
