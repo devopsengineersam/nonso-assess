@@ -3,7 +3,7 @@ name: Deploy Application
 on:
   push:
     branches:
-      - main # Monitor changes in the main branch
+      - master # Monitor changes in the master branch
 
 jobs:
   build-and-push:
