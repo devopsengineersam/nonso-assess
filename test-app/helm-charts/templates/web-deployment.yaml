@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: {{ .Values.web.replicaCount }}
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: "{{ .Values.web.image }}:{{ .Values.web.tag }}"
+          ports:
+            - containerPort: {{ .Values.web.port }}
+          env:
+            - name: PORT
+              value: "{{ .Values.web.port }}"
+            - name: API_HOST
+              value: "http://api:{{ .Values.api.port }}"
