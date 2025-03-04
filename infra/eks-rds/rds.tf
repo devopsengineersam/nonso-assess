@@ -9,7 +9,7 @@ resource "aws_db_instance" "nonso_db" {
   password             = "yourpassword" # Replace with a secure password
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
-  publicly_accessible  = false
+  publicly_accessible  = true
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
   db_subnet_group_name = aws_db_subnet_group.nonso_subnet_group.name
 }
@@ -28,7 +28,7 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = [ "10.0.0.0/16" ]
+    cidr_blocks = [ "10.0.0.0/16", "99.112.170.85/32", "105.163.158.190/32" ]
   }
 
   egress {
@@ -38,3 +38,4 @@ resource "aws_security_group" "rds_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
