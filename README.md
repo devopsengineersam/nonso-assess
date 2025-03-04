@@ -14,7 +14,7 @@ web <=> api   <=>       db
 
 ## **Architecture Diagram**
 
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](./architecture-1.png)
 
 ---
 
