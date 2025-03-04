@@ -39,18 +39,3 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
-# Run the SQL script after RDS is created
-# resource "null_resource" "initialize_database" {
-#   depends_on = [aws_db_instance.nonso_db]
-
-#   provisioner "local-exec" {
-#     command = <<-EOT
-#       mysql \
-#         --host=${aws_db_instance.nonso_db.endpoint} \
-#         --user=${aws_db_instance.nonso_db.username} \
-#         --password=${aws_db_instance.nonso_db.password} \
-#         < ../../applications/db/init.sql
-#     EOT
-#   }
-# }
-
