@@ -7,8 +7,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "toptal-assess-bucket"
-    key = "nonso-assess-tf-bucket/eks"
+    bucket = "nonso-assess-tf-bucket"
     region = "us-east-1"
   }
 }

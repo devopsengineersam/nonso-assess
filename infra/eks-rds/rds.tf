@@ -1,20 +1,3 @@
-# Look up the existing VPC
-data "aws_vpc" "project_vpc" {
-  id = var.vpc_id
-}
-
-# Look up the private subnets in the VPC
-data "aws_subnets" "private_subnets" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.project_vpc.id]
-  }
-
-  tags = {
-    SubnetType = "private"
-  }
-}
-
 resource "aws_db_instance" "nonso_db" {
   identifier           = "nonso-db"
   engine               = "mysql"
