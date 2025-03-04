@@ -4,7 +4,7 @@ metadata:
   name: app
 spec:
   selector:
-    app.kubernetes.io/name: {{ .Chart.Name }}
+    app: app
   ports:
   - name: http
     port: {{ .Values.app.port }}
