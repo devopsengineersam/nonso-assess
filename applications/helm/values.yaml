@@ -15,6 +15,12 @@ api:
     user: admin
     password: yourpassword
 
+app:
+  image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/construction
+  tag: v1.1.6
+  pullPolicy: IfNotPresent
+  replicaCount: 2
+
 ingress:
   enabled: true
   hosts:
