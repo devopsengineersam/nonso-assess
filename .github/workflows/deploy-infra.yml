@@ -1,9 +1,9 @@
-name: Deploy Infrastructure
+name: Deploy infra/eks-rdsstructure
 
 on:
   push:
     branches:
-      - infra # Monitor changes in the infra branch only
+      - infra/eks-rds # Monitor changes in the infra/eks-rds branch only
 
 jobs:
   deploy:
@@ -20,16 +20,16 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./infra # Path to your Terraform directory
+        working-directory: ./infra/eks-rds # Path to your Terraform directory
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: ./infra
+        working-directory: ./infra/eks-rds
 
       - name: Terraform Plan
         run: terraform plan
-        working-directory: ./infra
+        working-directory: ./infra/eks-rds
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        working-directory: ./infra
+        working-directory: ./infra/eks-rds
