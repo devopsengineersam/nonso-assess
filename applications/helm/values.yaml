@@ -18,7 +18,7 @@ api:
 app:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/construction
   tag: v1.1.6
-  pullPolicy: IfNotPresent
+  port: 80
   replicaCount: 2
 
 ingress:
