@@ -75,7 +75,7 @@ jobs:
 
       - name: Deploy Helm Chart
         run: |
-          helm upgrade --install nonso-app ./applications/helm/nonso-app \
+          helm upgrade --install nonso-app ./applications/helm \
             --set web.image=${{ secrets.ECR_REPO_URL }}/toptal-app:latest \
             --set api.image=${{ secrets.ECR_REPO_URL }}/toptal-api:latest \
             --set api.db.host=${{ secrets.DB_HOST }} \
