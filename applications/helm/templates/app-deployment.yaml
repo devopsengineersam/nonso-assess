@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: app
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.app.replicaCount }}
   selector:
     matchLabels:
       app: app
@@ -16,7 +16,7 @@ spec:
       - name: construction-web
         image: "{{ .Values.app.image }}:{{ .Values.app.tag }}"
         ports:
-        - containerPort: 80
+            - containerPort: {{ .Values.app.port }}
         resources:
           requests:
             cpu: 10m

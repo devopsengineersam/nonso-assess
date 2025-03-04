@@ -8,4 +8,4 @@ spec:
   ports:
   - name: http
     port: {{ .Values.app.port }}
-    targetPort: 80
+    targetPort: {{ .Values.app.port }}
