@@ -1,16 +1,16 @@
 web:
-  image: your-web-image
+  image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-app
   tag: latest
   port: 3000
   replicaCount: 2
 
 api:
-  image: your-api-image
+  image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-api
   tag: latest
   port: 4000
   replicaCount: 2
   db:
-    host: nonso-db.abc123.us-west-2.rds.amazonaws.com # Replace with your RDS endpoint
+    host: nonso-db.cr28qg4sq75y.us-east-1.rds.amazonaws.com # Replace with your RDS endpoint
     name: mydatabase
     user: admin
     password: yourpassword
@@ -21,7 +21,7 @@ ingress:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
   hosts:
-    - host: nonso-app.example.com # Replace with your domain
+    - host: app-assess.chebsam.people.aws.dev # Replace with your domain
       paths:
         - /web
         - /api
