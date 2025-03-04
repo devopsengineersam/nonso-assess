@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JakShem Website</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   
+   <!-- download swiper  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+<header class="header">
+
+   <a href="#" class="logo">Jakshem<span>Construction</span></a>
+
+   <nav class="navbar">
+      <a href="#home">home</a>
+      <a href="#about">about</a>
+      <a href="#services">services</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+      <!-- <a href="#blogs">blogs</a> -->
+   </nav>
+
+   <div class="icons">
+      <div id="menu-btn" class="fas fa-bars"></div>
+      <div id="info-btn" class="fas fa-info-circle"></div>
+      <div id="search-btn" class="fas fa-search"></div>
+      <div id="login-btn" class="fas fa-user"></div>
+   </div>
+
+   <form action="" class="search-form">
+      <input type="search" name="" placeholder="search here..." id="search-box">
+      <label for="search-box" class="fas fa-search"></label>
+   </form>
+
+   <form action="" class="login-form">
+      <h3>login form</h3>
+      <input type="email" placeholder="enter your email" class="box">
+      <input type="password" placeholder="enter your password" class="box">
+      <div class="flex">
+         <input type="checkbox" name="" id="remember-me">
+         <label for="remember-me">remember me</label>
+         <a href="#">forgot password?</a>
+      </div>
+      <input type="submit" value="login now" class="btn">
+      <p>don't have an account <a href="#">create one!</a></p>
+   </form>
+
+</header>
+
+<div class="contact-info">
+
+   <div id="close-contact-info" class="fas fa-times"></div>
+
+   <div class="info">
+      <i class="fas fa-phone"></i>
+      <h3>phone number</h3>
+      <p>+254-717-502-093</p>
+   </div>
+
+   <div class="info">
+      <i class="fas fa-envelope"></i>
+      <h3>email address</h3>
+      <p>jkuta@jakshem.contractors</p>
+      <p>skisiangani@jakshem.contractors</p>
+   </div>
+
+   <div class="info">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>office address</h3>
+      <p>Nairobi, Westlands - AACC Center / Opp Safaricom</p>
+   </div>
+
+   <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin"></a>
+   </div>
+
+</div>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+   <div class="swiper home-slider">
+      <div class="swiper-wrapper">
+         <section class="swiper-slide slide" style="background: url(images/home-slide-1.jpg) no-repeat;">
+            <div class="content">
+               <h3>we provide best service</h3>
+               <p>With extensive experience in the construction industry, Jakshem Construction specializes in a diverse range of projects, including healthcare, residential, commercial, warehouse, religious, and interior services.</p>
+               <a href="#about" class="btn">get started</a>
+            </div>
+         </section>
+
+         <section class="swiper-slide slide" style="background: url(images/home-slide-2.jpg) no-repeat;">
+            <div class="content">
+               <h3>making dream come to life</h3>
+               <p>At Jakshem Construction, "Bringing Your Dreams to Life" is more than just a slogan—it's our commitment to turning your vision into reality. With decades of experience in the construction industry, we specialize in creating exceptional spaces that reflect your unique needs and aspirations</p>
+               <a href="#about" class="btn">get started</a>
+            </div>
+         </section>
+
+         <section class="swiper-slide slide" style="background: url(images/home-slide-3.jpg) no-repeat;">
+            <div class="content">
+               <h3>from concept to creation</h3>
+               <p>At Jakshem Construction, we believe that every successful project begins with a strong concept, and we work meticulously to bring that concept to life with precision, creativity, and quality. From the drawing board to the final build, we are with you every step of the way, ensuring that the end result exceeds your expectations.</p>
+               <a href="#about" class="btn">get started</a>
+            </div>
+         </section>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+   </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+      var swiper = new Swiper('.home-slider', {
+         loop: true,
+         autoplay: {
+            delay: 4000, // Change this value to adjust the speed (1000ms = 1s)
+            disableOnInteraction: false,
+         },
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+      });
+   });
+</script>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+   <h1 class="heading"> about us </h1>
+
+   <div class="row">
+
+      <div class="video">
+         <video src="images/about-vid.mp4" loop muted autoplay></video>
+      </div>
+
+      <div class="content">
+         <h3>We will provide you the best work which you dreamt for!</h3>
+         <p>We are passionate about building exceptional spaces that inspire and endure. With a rich history in the construction industry, our expertise spans across a wide range of sectors, including healthcare, residential, commercial, warehouse, religious, and interior services. <br>
+            At Jakshem Construction, we don’t just build structures—we build lasting relationships with our clients by ensuring that each project is completed on time, within budget, and to the highest standards of quality. Your vision is our mission, and together, we create spaces that stand the test of time.<br>
+            Welcome to Jakshem Construction—where your dreams become reality.
+            </p>
+         <a href="#services" class="btn">read more</a>
+      </div>
+
+   </div>
+
+   <div class="box-container">
+
+      <div class="box">
+         <h3>10+</h3>
+         <p>years of experience</p>
+      </div>
+
+      <div class="box">
+         <h3>867+</h3>
+         <p>project completed</p>
+      </div>
+
+      <div class="box">
+         <h3>790+</h3>
+         <p>satiesfied clients</p>
+      </div>
+
+      <div class="box">
+         <h3>450+</h3>
+         <p>active workers</p>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+   <h1 class="heading"> our services </h1>
+   <div class="box-container" id="services-container"></div>
+</section>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+      const services = [
+         {
+            img: 'images/service-1.png',
+            title: 'building construction',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, necessitatibus.'
+         },
+         {
+            img: 'images/service-2.png',
+            title: 'Residential Construction',
+            description: 'From custom homes to multi-unit developments, we bring your residential visions to life with superior craftsmanship and attention to detail. Our residential projects are designed to provide comfortable, beautiful, and lasting living spaces.'
+         },
+         {
+            img: 'images/service-3.png',
+            title: 'architecture design',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, necessitatibus.'
+         },
+         {
+            img: 'images/service-4.png',
+            title: 'material supply',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, necessitatibus.'
+         },
+         {
+            img: 'images/service-5.png',
+            title: 'construction consultant',
+            description: 'We offer consultancy at a small fee of KES 10,000 an hour.'
+         },
+         {
+            img: 'images/service-6.png',
+            title: 'interior design',
+            description: 'Our interior services range from design to fit-outs, creating environments that are both functional and visually appealing. We work closely with you to ensure that every interior project reflects your style and meets your specific needs.'
+         },
+         {
+            img: 'images/service-7.png',
+            title: 'building maintenance',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, necessitatibus.'
+         },
+         {
+            img: 'images/service-8.png',
+            title: 'Project Management',
+            description: 'Our comprehensive project management services are designed to ensure that your construction project runs smoothly from start to finish. We oversee every aspect of the process, including planning, scheduling, budgeting, and quality control. Our goal is to deliver your project on time, within budget, and to the highest standards of excellence.'
+         }
+      ];
+
+      const servicesContainer = document.getElementById('services-container');
+      servicesContainer.innerHTML = services.map(service => `
+         <div class="box">
+            <img src="${service.img}" alt="">
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+         </div>
+      `).join('');
+   });
+</script>
+
+<!-- services section ends -->
+
+
+<!-- projects section starts  -->
+
+<section class="projects" id="projects">
+   <h1 class="heading"> Our Projects </h1>
+   <div class="box-container" id="projects-container"></div>
+
+   <!-- Section for displaying the modal -->
+   <div id="image-modal" class="modal">
+      <div class="modal-content" id="modal-content">
+         <div class="modal-cont-header">
+            <p class="project-header-Images">Project Images</p>
+            <span class="close">&times;</span>
+         </div>
+         <div class="modal-inner">
+            <div id="modal-images-container">
+               <img id="modal-image-1" class="modal-Image" src="" alt="First Image"/>
+               <img id="modal-image-2" class="modal-Image" src="" alt="Second Image"/>
+            </div>
+            <p id="no-images-message" style="display: none; color: white;">No additional images available.</p>
+            <div class="modal-btn-container">
+               <button class="right" id="prev-btn">
+                  <i class="fas fa-chevron-left"></i>
+               </button>
+               <button class="left" id="next-btn">
+                  <i class="fas fa-chevron-right"></i>
+               </button>
+           </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+      const projects =      [
+         {
+            href: "images/interior-3.jpg",
+            src: "images/interior-3.jpg",
+            title: "Interior Design",
+            moreImages:[
+                  "images/interior-1.jpg",
+                  "images/interior-2.jpg",
+                  "images/interior-3.jpg",
+                  "images/interior-4.jpg",
+                  "images/interior-5.jpg",
+                  "images/interior-6.jpg",
+                  "images/interior-7.jpg",
+                  "images/interior-8.jpg",
+                  "images/interior-9.jpg",
+                  "images/interior-10.jpg",
+                  "images/interior-11.jpg",
+                  "images/interior-12.jpg",
+                  "images/interior-13.jpg",
+                  "images/interior-14.jpg",
+                  "images/interior-15.jpg",
+                  "images/interior-16.jpg",
+               ]
+         },
+         {
+            href: "images/project-5.jpg",
+            src: "images/project-5.jpg",
+            title: "Commercial Development",
+            moreImages:[
+                  "images/residential-1.jpg",
+                  "images/residential-2.jpg",
+                  "images/residential-3.jpg",
+                  "images/residential-4.jpg",
+                  "images/residential-5.jpg",
+                  "images/residential-6.jpeg",
+                  "images/residential-7.jpeg",
+                  "images/residential-8.jpeg",
+                  "images/residential-9.jpeg",
+            ]
+         },
+         {
+            href: "images/project-3.jpg",
+            src: "images/project-3.jpg",
+            title: "Residential Development",
+            moreImages:[]
+         },
+         {
+            href: "images/project-4.jpg",
+            src: "images/project-4.jpg",
+            title: "Crane Services",
+            moreImages:[]
+         },
+         {
+            href: "images/project-6.jpg",
+            src: "images/project-6.jpg",
+            title: "Steel Fabrication",
+            moreImages:[]
+         },
+         {
+            href: "images/heavy-equipment-1.png",
+            src: "images/heavy-equipment-1.png",
+            title: "Heavy Equipment",
+            moreImages:[]
+         },
+      ];
+
+      const projectsContainer = document.getElementById('projects-container');
+      const imageModal = document.getElementById('image-modal');
+      const closeModal = document.querySelector('.close');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const modalImage1 = document.getElementById('modal-image-1');
+      const modalImage2 = document.getElementById('modal-image-2');
+      const modalImagesContainer = document.getElementById('modal-images-container');
+      const noImagesMessage = document.getElementById('no-images-message');
+
+      let currentIndex = 0;
+      let currentProject = null;
+
+      projectsContainer.innerHTML = projects.map((project, index) =>
+         `<div class="box">
+            <div class="image">
+               <img src="${project.src}" alt="${project.title}"/>
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>${project.title}</h3>
+               </div>
+               <a href="javascript:void(0);" data-index="${index}">
+                  <i class="fas fa-plus"></i>
+               </a>
+            </div>
+         </div>`
+      ).join('');
+
+      // Add event listener to all the plus icons
+      const plusIcons = document.querySelectorAll('.fa-plus');
+      plusIcons.forEach(icon => {
+         icon.parentElement.addEventListener('click', function() {
+            const projectIndex = this.getAttribute('data-index');
+            currentProject = projects[projectIndex];
+            currentIndex = 0;
+
+            showImages();
+            imageModal.style.display = 'block';
+         });
+      });
+
+      function showImages() {
+         if (currentProject.moreImages.length === 0) {
+            // No images available
+            modalImagesContainer.style.display = 'none';
+            noImagesMessage.style.display = 'block';
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+         } else {
+            // Images available
+            modalImagesContainer.style.display = 'flex';
+            noImagesMessage.style.display = 'none';
+            prevBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+
+            modalImage1.src = currentProject.moreImages[currentIndex] || '';
+            modalImage2.src = currentProject.moreImages[currentIndex + 1] || '';
+            modalImage1.alt = currentProject.title + ' Image 1';
+            modalImage2.alt = currentProject.title + ' Image 2';
+
+            // Handle single image display on mobile device
+            const isMobileView = window.matchMedia('(max-width: 884px)').matches;
+                if (isMobileView) {
+                    modalImage2.style.display = 'none';
+                } else {
+                    // Hide second image if it doesn't exist
+                    modalImage2.style.display = currentProject.moreImages[currentIndex + 1] ? 'inline-block' : 'none';
+                }
+            }
+        }
+
+      prevBtn.addEventListener('click', function() {
+         if (currentIndex > 0) {
+            currentIndex -= 2;
+            showImages();
+         }
+      });
+
+      nextBtn.addEventListener('click', function() {
+         if (currentIndex + 2 < currentProject.moreImages.length) {
+            currentIndex += 2;
+            showImages();
+         } else {
+            modalImage1.src = '';
+            modalImage2.src = '';
+            modalImage1.alt = 'No additional images available';
+            modalImage2.alt = '';
+            showImages();
+         }
+      });
+
+      closeModal.addEventListener('click', function() {
+         imageModal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function(event) {
+         if (event.target == imageModal) {
+            imageModal.style.display = 'none';
+         }
+      });
+
+      window.addEventListener('resize', showImages);
+
+   });
+
+</script>
+
+<!-- projects section ends -->
+
+
+<!-- reviews section starts  -->
+
+<section class="reviews">
+   <h1 class="heading"> clients reviews </h1>
+   <div class="swiper reviews-slider">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide slide">
+            <p>I am incredibly impressed with the construction services provided for my home renovation. The team’s professionalism and attention to detail resulted in a stunning transformation of my old house.</p>
+            <div class="user">
+               <img src="images/pic-1.png" alt="">
+               <div class="info">
+                  <h3>joyce mutinda</h3>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <p>The construction company exceeded my expectations in building a beautiful residential apartment. Their expertise, efficiency, and dedication ensured a smooth process and an outstanding final result.</p>
+            <div class="user">
+               <img src="images/pic-2.png" alt="">
+               <div class="info">
+                  <h3>dan ibrahim</h3>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <p>The interior design company transformed my bar restaurant into a stunning and inviting space. Their creativity and attention to detail have created an atmosphere that both my staff and customers love.</p>
+            <div class="user">
+               <img src="images/pic-3.png" alt="">
+               <div class="info">
+                  <h3>kamau japhet</h3>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <p>The company delivered outstanding service in constructing my commercial building. Their professionalism and attention to detail ensured a seamless process and a high-quality result that exceeded my expectations.</p>
+            <div class="user">
+               <img src="images/pic-4.png" alt="">
+               <div class="info">
+                  <h3>njambi esther</h3>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <p>I am thoroughly impressed with the construction services provided for building my home. The team’s professionalism and dedication resulted in a beautifully crafted and high-quality residence.</p>
+            <div class="user">
+               <img src="images/pic-5.png" alt="">
+               <div class="info">
+                  <h3>mary gathoni</h3>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <p>The construction company did an exceptional job building my home. Their professionalism and attention to detail ensured a smooth process and a beautifully finished product.</p>
+            <div class="user">
+               <img src="images/pic-6.png" alt="">
+               <div class="info">
+                  <h3>john mbaire</h3>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Add navigation buttons if needed -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Add pagination if needed -->
+      <div class="swiper-pagination"></div>
+   </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+     var reviewsSwiper = new Swiper('.reviews-slider', {
+       autoplay: {
+         delay: 5000,
+         disableOnInteraction: false,
+       },
+       loop: true,
+       //removed default view as it hinders mobile behaviour
+       //slidesPerView: 3,
+       //slidesPerGroup: 3,
+       navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+       },
+       pagination: {
+         el: '.swiper-pagination',
+         clickable: true,
+       },
+       breakpoints: {
+            450: {
+               slidesPerView: 2,
+               slidesPerGroup: 2,
+            },
+            768: {
+               slidesPerView: 2,
+               slidesPerGroup: 2,
+            },
+            991: {
+               slidesPerView: 3,
+               slidesPerGroup: 3,
+            },
+         },
+     });
+   });
+ </script>
+
+<!-- reviews section ends -->
+
+<!-- Removed pricing section  -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+   <h1 class="heading"> contact us </h1>
+   
+   <div class="row">
+   
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.853403300237!2d36.7841794773128!3d-1.2601284356029758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17880f19cec1%3A0x4a80cfea076b6a2b!2sAll%20Africa%20Conference%20Of%20Churches%2C%20Archbishop%20Desmond%20Tutu%20Ecumenical%20Centre!5e0!3m2!1sen!2ske!4v1721214515677!5m2!1sen!2ske" allowfullscreen="" loading="lazy"></iframe>
+
+
+      <form id="contactForm">
+         <h3>get in touch</h3>
+         <input type="text" placeholder="Name" class="box" name="name" required>
+         <div class="form-group">
+           <label for="email">Email:</label>
+           <i class="fa fa-envelope"></i>
+           <input type="email" placeholder="Your Email" id="email" name="email" required>
+         </div>
+         <div class="form-group">
+           <label for="phone">Phone:</label>
+           <i class="fa fa-phone"></i>
+           <input type="number" placeholder="Your Phone" id="phone" name="phone" required>
+         </div>
+         <div class="form-group">
+           <label for="message">Message:</label>
+           <textarea name="message" placeholder="Your Message" class="box" id="message" cols="30" rows="10" required></textarea>
+         </div>
+         <input type="submit" value="send message" class="btn">
+         <div id="successMessage" style="display: none;">Message received successfully, we shall get back to you</div>
+       </form>
+   
+   </div>
+   
+</section>
+   
+<script>
+const form = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+
+form.addEventListener('submit', (event) => {
+event.preventDefault(); // Prevent default form submission
+
+fetch('https://script.google.com/macros/s/AKfycby275LnyVQELAClH_ChTzR9U9gv0zswNwvDScE1ujOl5CczUo_UAZKBrID__NJ0XX8sMA/exec', {
+   method: 'POST',
+   body: new FormData(form)
+})
+   .then(response => {
+      if (response.ok) {
+      successMessage.style.display = 'block';
+
+      setTimeout(() => {
+      successMessage.style.display = 'none';
+      }, 4000); // 4000 milliseconds = 4 seconds
+
+      form.reset(); // Clear form fields
+      } else {
+      console.error('Error submitting form:', response.statusText);
+      // Handle potential errors (e.g., display error message to user)
+      }
+   });
+});
+</script>
+
+<!-- contact section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+   <h1 class="heading"> our blogs </h1>
+   <div class="swiper blogs-slider">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide slide">
+            <div class="image">
+               <a href="https://www.linkedin.com/pulse/redefining-construction-black-cotton-soil-turning-challenges-mbiu-2wkyf">
+                  <img src="images/blog-1.jpg" alt="">
+               </a>
+            </div>
+            <div class="content">
+               <h3>how to mitigate the danger of building on black cotton</h3>
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <div class="image">
+               <a href="https://www.linkedin.com/pulse/redefining-construction-black-cotton-soil-turning-challenges-mbiu-2wkyf">
+                  <img src="images/blog-2.jpg" alt="">
+               </a>
+            </div>
+            <div class="content">
+               <h3>maximizing on open space for your home</h3>
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+         <div class="swiper-slide slide">
+            <div class="image">
+               <a href="https://www.linkedin.com/pulse/redefining-construction-black-cotton-soil-turning-challenges-mbiu-2wkyf">
+                  <img src="images/blog-3.jpg" alt="">
+               </a>
+            </div>
+            <div class="content">
+               <h3>balance between space and number of bedrooms</h3>
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+      </div>
+      <!-- Add navigation buttons if needed -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Add pagination if needed -->
+      <div class="swiper-pagination"></div>
+   </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+     var blogsSwiper = new Swiper('.blogs-slider', {
+       autoplay: {
+         delay: 6000, // 4 sec
+         disableOnInteraction: false,
+       },
+       loop: true,
+       slidesPerView: 2,
+       slidesPerGroup: 2,
+       navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+       },
+       pagination: {
+         el: '.swiper-pagination',
+         clickable: true,
+       },
+     });
+   });
+ </script>
+
+<!-- blogs section ends -->
+
+<!-- client logo section starts -->
+
+<section class="logo-container">
+   <div class="swiper logo-slider">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide slide"><img src="images/client-logo-1.png" alt=""></div>
+         <div class="swiper-slide slide"><img src="images/client-logo-2.png" alt=""></div>
+         <div class="swiper-slide slide"><img src="images/client-logo-3.png" alt=""></div>
+         <div class="swiper-slide slide"><img src="images/client-logo-4.png" alt=""></div>
+         <div class="swiper-slide slide"><img src="images/client-logo-5.png" alt=""></div>
+         <div class="swiper-slide slide"><img src="images/client-logo-6.png" alt=""></div>
+      </div>
+   </div>
+</section>
+
+<!-- client logo section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+   <div class="links">
+      <a class="btn" href="#home">home</a>
+      <a class="btn" href="#about">about</a>
+      <a class="btn" href="#services">services</a>
+      <a class="btn" href="#projects">projects</a>
+      <a class="btn" href="#contact">contact</a>
+      <a class="btn" href="#blogs">blogs</a>
+   </div>
+
+   <div class="credit"> Created by <span>devopengineersam</span> | 2024 all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+
+lightGallery(document.querySelector('.projects .box-container'));
+
+</script>
+
+</body>
+</html>

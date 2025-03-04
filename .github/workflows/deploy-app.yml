@@ -24,7 +24,7 @@ jobs:
         run: |
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REPO_URL }}
 
-      - name: Build and Tag Web Image
+      - name: Build and Tag Web Image # nodejs App
         run: |
           docker build -t toptal-app:v1.0.0 ./applications/web
           docker tag toptal-app:v1.0.0 ${{ secrets.ECR_REPO_URL }}/toptal-app:v1.0.0
@@ -33,7 +33,7 @@ jobs:
         run: |
           docker push ${{ secrets.ECR_REPO_URL }}/toptal-app:v1.0.0
 
-      - name: Build and Tag API Image
+      - name: Build and Tag API Image # nodejs API
         run: |
           docker build -t toptal-api:v1.0.0 ./applications/api
           docker tag toptal-api:v1.0.0 ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.0
@@ -41,6 +41,17 @@ jobs:
       - name: Push API Image to ECR
         run: |
           docker push ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.0
+      
+      - name: Build and Tag App image # javascript web app
+        run: |
+          docker build -t construction:v1.0.0 ./applications/app
+          docker tag construction:v1.0.0 ${{ secrets.ECR_REPO_URL }}/construction:v1.0.0
+  
+      - name: Push App Image to ECR
+        run: |
+          docker push ${{ secrets.ECR_REPO_URL }}/construction:v1.0.0
+
+    
 
   deploy:
     runs-on: ubuntu-latest

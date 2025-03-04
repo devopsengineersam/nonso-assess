@@ -34,3 +34,10 @@ spec:
                 name: api
                 port:
                   number: {{ .Values.api.port }}
+          - path: /app
+            pathType: Prefix
+            backend:
+              service:
+                name: app
+                port:
+                  number: {{ .Values.app.port }}
