@@ -8,6 +8,7 @@ terraform {
   }
   backend "s3" {
     bucket = "nonso-assess-tf-bucket"
+    key = "tfstate"
     region = "us-east-1"
   }
 }
