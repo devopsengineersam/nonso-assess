@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-v1.0.0
 
     steps:
       - name: Checkout repository
@@ -26,21 +26,21 @@ jobs:
 
       - name: Build and Tag Web Image
         run: |
-          docker build -t toptal-app:latest ./applications/web
-          docker tag toptal-app:latest ${{ secrets.ECR_REPO_URL }}/toptal-app:latest
+          docker build -t toptal-app:v1.0.0 ./applications/web
+          docker tag toptal-app:v1.0.0 ${{ secrets.ECR_REPO_URL }}/toptal-app:v1.0.0
 
       - name: Push Web Image to ECR
         run: |
-          docker push ${{ secrets.ECR_REPO_URL }}/toptal-app:latest
+          docker push ${{ secrets.ECR_REPO_URL }}/toptal-app:v1.0.0
 
       - name: Build and Tag API Image
         run: |
-          docker build -t toptal-api:latest ./applications/api
-          docker tag toptal-api:latest ${{ secrets.ECR_REPO_URL }}/toptal-api:latest
+          docker build -t toptal-api:v1.0.0 ./applications/api
+          docker tag toptal-api:v1.0.0 ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.0
 
       - name: Push API Image to ECR
         run: |
-          docker push ${{ secrets.ECR_REPO_URL }}/toptal-api:latest
+          docker push ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.0
 
   deploy:
     runs-on: ubuntu-latest
@@ -76,8 +76,6 @@ jobs:
       - name: Deploy Helm Chart
         run: |
           helm upgrade --install nonso-app ./applications/helm \
-            --set web.image=${{ secrets.ECR_REPO_URL }}/toptal-app:latest \
-            --set api.image=${{ secrets.ECR_REPO_URL }}/toptal-api:latest \
             --set api.db.host=${{ secrets.DB_HOST }} \
             --set api.db.user=${{ secrets.DB_USER }} \
             --set api.db.password=${{ secrets.DB_PASSWORD }} \
