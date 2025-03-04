@@ -4,6 +4,8 @@
 ./api/node_modules/
 ./api/package-lock.json
 
+./applications/.env
+
 
 .terraform/
 ./infra/.terraform/
