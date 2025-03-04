@@ -1,12 +1,10 @@
 web:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-app
-  tag: latest
   port: 3000
   replicaCount: 2
 
 api:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-api
-  tag: latest
   port: 4000
   replicaCount: 2
   db:
