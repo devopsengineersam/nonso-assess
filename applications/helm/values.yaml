@@ -2,12 +2,14 @@ web:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-app
   tag: v1.0.0
   port: 3000
+  pullPolicy: IfNotPresent
   replicaCount: 2
 
 api:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-api
   tag: v1.0.0
   port: 4000
+  pullPolicy: IfNotPresent
   replicaCount: 2
   db:
     host: nonso-db.cr28qg4sq75y.us-east-1.rds.amazonaws.com
@@ -19,6 +21,7 @@ app:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/construction
   tag: v1.1.6
   port: 80
+  pullPolicy: IfNotPresent
   replicaCount: 2
 
 ingress:
