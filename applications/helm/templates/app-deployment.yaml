@@ -15,7 +15,6 @@ spec:
       containers:
       - name: construction-web
         image: "{{ .Values.app.image }}:{{ .Values.app.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: 80
         resources:
