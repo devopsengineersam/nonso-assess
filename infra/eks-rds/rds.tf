@@ -1,20 +1,3 @@
-# Look up the existing VPC
-data "aws_vpc" "project_vpc" {
-  id = var.vpc_id
-}
-
-# Look up the private subnets in the VPC
-data "aws_subnets" "private_subnets" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.project_vpc.id]
-  }
-
-  tags = {
-    SubnetType = "private"
-  }
-}
-
 resource "aws_db_instance" "nonso_db" {
   identifier           = "nonso-db"
   engine               = "mysql"
@@ -45,7 +28,7 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    security_groups = [data.terraform_remote_state.eks.outputs.eks_node_security_group_id]
+    cidr_blocks = [ "10.0.0.0/16" ]
   }
 
   egress {

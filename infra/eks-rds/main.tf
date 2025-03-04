@@ -1,3 +1,4 @@
+# main tf
 terraform {
   required_providers {
     aws = {
@@ -6,8 +7,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "toptal-assess-bucket"
-    key = "nonso-assess-tf-bucket/eks"
+    bucket = "nonso-assess-tf-bucket"
+    key = "tfstate"
     region = "us-east-1"
   }
 }
