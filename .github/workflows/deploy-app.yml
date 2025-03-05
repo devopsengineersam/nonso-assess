@@ -91,7 +91,8 @@ jobs:
             --set api.db.user=${{ secrets.DB_USER }} \
             --set api.db.password=${{ secrets.DBPASS }} \
             --set api.db.name=${{ secrets.DB_NAME }} \
-            --set api.db.port=${{ secrets.DBPORT }}
+            --set api.db.port=${{ secrets.DBPORT }} \
+            --set api.db.port=${{ secrets.DB }}
 
       - name: Deploy Monitoring Helm Chart
         run: |
