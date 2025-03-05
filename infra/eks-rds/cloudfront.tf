@@ -1,7 +1,7 @@
 # CloudFront Distribution
 resource "aws_cloudfront_distribution" "app_cdn" {
   origin {
-    domain_name = "k8s-albdev-4c706dacac-2018138021.us-east-1.elb.amazonaws.com"
+    domain_name = "k8s-albdev-4c706dacac-1267422606.us-east-1.elb.amazonaws.com"
     origin_id   = "alb-origin"
 
     custom_origin_config {
