@@ -89,7 +89,7 @@ resource "aws_eks_node_group" "custom_node_group" {
   subnet_ids      = data.aws_subnets.private_subnets.ids
 
   scaling_config {
-    desired_size = 4
+    desired_size = 2
     max_size     = 5
     min_size     = 2
   }
