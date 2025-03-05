@@ -17,7 +17,7 @@ api:
 
 app:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/construction
-  tag: v1.1.6
+  tag: v1.0.0
   port: 80
   replicaCount: 2
 

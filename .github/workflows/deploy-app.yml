@@ -42,7 +42,7 @@ jobs:
         run: |
           docker push ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.0
       
-      - name: Build and Tag App image # javascript web app
+      - name: Build and Tag App image # javascript web app (testing)
         run: |
           docker build -t construction:v1.0.0 ./applications/app
           docker tag construction:v1.0.0 ${{ secrets.ECR_REPO_URL }}/construction:v1.0.0
