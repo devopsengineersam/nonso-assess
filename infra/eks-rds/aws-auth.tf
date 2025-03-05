@@ -27,5 +27,5 @@ YAML
 YAML
   }
 
-  depends_on = [aws_eks_cluster.eks_cluster]
+  depends_on = [aws_eks_cluster.eks_cluster, aws_eks_node_group.custom_node_group]
 }
