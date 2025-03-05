@@ -84,10 +84,14 @@ jobs:
           chmod 700 get_helm.sh
           ./get_helm.sh
 
-      - name: Deploy Helm Chart
+      - name: Deploy Applications Helm Chart
         run: |
           helm upgrade --install nonso-app ./applications/helm \
             --set api.db.host=${{ secrets.DB_HOST }} \
             --set api.db.user=${{ secrets.DB_USER }} \
             --set api.db.password=${{ secrets.DB_PASSWORD }} \
             --set api.db.name=${{ secrets.DB_NAME }}
+
+      - name: Deploy Monitoring Helm Chart
+        run: |
+          helm upgrade --install nonso-app ./applications/monitoring -n monitoring
