@@ -89,8 +89,9 @@ jobs:
           helm upgrade --install nonso-app ./applications/helm \
             --set api.db.host=${{ secrets.DB_HOST }} \
             --set api.db.user=${{ secrets.DB_USER }} \
-            --set api.db.password=${{ secrets.DB_PASSWORD }} \
-            --set api.db.name=${{ secrets.DB_NAME }}
+            --set api.db.password=${{ secrets.DBPASS }} \
+            --set api.db.name=${{ secrets.DB_NAME }} \
+            --set api.db.port=${{ secrets.DBPORT }}
 
       - name: Deploy Monitoring Helm Chart
         run: |
