@@ -98,6 +98,11 @@ resource "aws_eks_node_group" "custom_node_group" {
   disk_size = 100
   ami_type = "AL2_x86_64"
 
+  tags = {
+    "Name" = "custom-node-group"
+    "autodelete" = "no"
+  }
+
   depends_on = [
     aws_iam_role_policy_attachment.eks_node_group_AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.eks_node_group_AmazonEC2ContainerRegistryReadOnly,
