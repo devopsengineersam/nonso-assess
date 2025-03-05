@@ -1,3 +1,4 @@
+# Default values for applications
 web:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-app
   tag: v1.0.0
