@@ -1,71 +1,58 @@
-var express = require('express');
-var app = express();
-var uuid = require('node-uuid');
+const express = require('express');
+const app = express();
+const mysql = require('mysql2'); // Use mysql2 instead of pg
 
-var pg = require('pg');
-const conString = {
-    user: process.env.DBUSER,
-    database: process.env.DB,
-    password: process.env.DBPASS,
-    host: process.env.DBHOST,
-    port: process.env.DBPORT                
+// Database configuration
+const dbConfig = {
+  host: process.env.DBHOST,
+  user: process.env.DBUSER,
+  password: process.env.DBPASS,
+  database: process.env.DB,
+  port: process.env.DBPORT || 3306,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 };
 
+// Create a MySQL connection pool
+const pool = mysql.createPool(dbConfig);
+
 // Routes
-app.get('/api/status', function(req, res) {
-//'SELECT now() as time', [], function(err, result
-  
-  const Pool = require('pg').Pool
-  const pool = new Pool(conString)
-  // connection using created pool
-  pool.connect((err, client, release) => {
+app.get('/api/status', (req, res) => {
+  pool.getConnection((err, connection) => {
     if (err) {
-      return console.error('Error acquiring client', err.stack)
+      console.error('Error acquiring connection:', err.stack);
+      return res.status(500).send('Database connection error');
     }
-    client.query('SELECT now() as time', (err, result) => {
-      release()
-    if (err) {
-      console.log(err);
-      return console.error('Error executing query', err.stack)
-    }
-    res.status(200).send(result.rows);
-  });
-});
 
-  // pool shutdown
-  pool.end()
-});
+    connection.query('SELECT NOW() AS time', (queryErr, results) => {
+      connection.release(); // Always release the connection back to the pool
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+      if (queryErr) {
+        console.error('Error executing query:', queryErr.stack);
+        return res.status(500).send('Query execution error');
+      }
 
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.json({
-      message: err.message,
-      error: err
+      res.status(200).json(results[0]);
     });
   });
-}
+});
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.json({
+// Error handlers
+app.use((req, res, next) => {
+  res.status(404).json({ message: 'Not Found' });
+});
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json({
     message: err.message,
-    error: {}
+    error: app.get('env') === 'development' ? err : {}
   });
 });
 
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`API running on port ${PORT}`);
+});
 
 module.exports = app;
