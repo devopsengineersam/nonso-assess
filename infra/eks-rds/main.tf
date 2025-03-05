@@ -15,6 +15,13 @@ terraform {
 
 provider "aws" {
     region = "us-east-1"
+    default_tags {
+      tags = {
+        Environment = "Test"
+        ManagedBy   = "Terraform"
+        autodelete  = "no"
+      }
+    }
 }
 
 provider "kubernetes" {
