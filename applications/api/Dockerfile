@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port the app will run on
-EXPOSE 4001
+EXPOSE 4000
 
 # Set environment variables
 ENV DB=${DB}
