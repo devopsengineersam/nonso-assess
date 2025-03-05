@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api
+  name: api-test
 spec:
-  replicas: {{ .Values.api.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: api-test
   template:
     metadata:
       labels:
-        app: api
+        app: api-test
     spec:
       containers:
-        - name: api
-          image: "{{ .Values.api.image }}:{{ .Values.api.tag }}"
+        - name: api-test
+          image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-api:v1.0.0
           imagePullPolicy: Always
           ports:
-            - containerPort: {{ .Values.api.port }}
+            - containerPort: 4004
           resources:
             requests:
               cpu: 500m
@@ -26,15 +26,13 @@ spec:
               cpu: 500m
               memory: 512Mi
           env:
-            - name: PORT
-              value: "{{ .Values.api.port }}"
             - name: DB
-              value: "{{ .Values.api.db.name }}"
+              value: "catalog"
             - name: DBUSER
-              value: "{{ .Values.api.db.user }}"
+              value: "admin"
             - name: DBPASS
-              value: "{{ .Values.api.db.password }}"
+              value: "yourpassword"
             - name: DBHOST
-              value: "{{ .Values.api.db.host }}"
+              value: "nonso-db.cr28qg4sq75y.us-east-1.rds.amazonaws.com"
             - name: DBPORT
               value: "3306"
