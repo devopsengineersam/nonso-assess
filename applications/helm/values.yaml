@@ -7,8 +7,8 @@ web:
 
 api:
   image: 533267037417.dkr.ecr.us-east-1.amazonaws.com/toptal-api
-  tag: v1.0.2
-  port: 4001
+  tag: v1.0.0
+  port: 4000
   replicaCount: 2
   db:
     host: nonso-db.cr28qg4sq75y.us-east-1.rds.amazonaws.com
