@@ -36,7 +36,7 @@ jobs:
       - name: Build and Tag API Image # nodejs API
         run: |
           docker build -t toptal-api:v1.0.5 ./applications/api
-          docker tag toptal-api:v1.0.0 ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.5
+          docker tag toptal-api:v1.0.5 ${{ secrets.ECR_REPO_URL }}/toptal-api:v1.0.5
 
       - name: Push API Image to ECR
         run: |
