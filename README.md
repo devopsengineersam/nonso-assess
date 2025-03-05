@@ -115,9 +115,13 @@ Add the following secrets to your GitHub repository:
 ### **4. Deploy Applications**
 1. **Helm Chart**:
    - Update the `applications/helm/nonso-app/values.yaml` file with the correct image names and RDS credentials.
-   - Deploy the Helm chart to your EKS cluster:
+   - Deploy the Applicationn Helm chart to your EKS cluster:
      ```bash
-     helm install nonso-app ./applications/helm/nonso-app
+     helm install nonso-app ./applications/helm
+     ```
+   - Deploy the monitoring Helm chart to your EKS cluster:
+     ```bash
+     helm install prometheus-stack ./applications/monitoring -n monitoring
      ```
 
 2. **GitHub Workflow**:
@@ -138,14 +142,15 @@ Add the following secrets to your GitHub repository:
 - **Trigger**: Push to the `master` branch.
 - **Actions**:
   - Builds and pushes Docker images to Amazon ECR.
-  - Deploys the Helm chart to the EKS cluster.
+  - Deploys the Helm charts to the EKS cluster.
 
 ---
 
 ## **Access the Applications**
 
-- **Web Application**: `http://nonso-app.example.com/web`
-- **API Application**: `http://nonso-app.example.com/api`
+- **Web Application**: `http://app-assess.chebsam.people.aws.dev/web`
+- **API Application**: `http://app-assess.chebsam.people.aws.dev/api`
+- **Website **: `http://jak.chebsam.people.aws.dev/`
 
 ---
 
@@ -154,6 +159,9 @@ Add the following secrets to your GitHub repository:
 1. **Uninstall Helm Chart**:
    ```bash
    helm uninstall nonso-app
+   ```
+   ```bash
+   helm uninstall prometheus-stack -n monitoring
    ```
 
 2. **Destroy Infrastructure**:

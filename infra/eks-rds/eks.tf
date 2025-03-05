@@ -89,7 +89,7 @@ resource "aws_eks_node_group" "custom_node_group" {
   subnet_ids      = data.aws_subnets.private_subnets.ids
 
   scaling_config {
-    desired_size = 4
+    desired_size = 2
     max_size     = 5
     min_size     = 2
   }
@@ -97,6 +97,11 @@ resource "aws_eks_node_group" "custom_node_group" {
   instance_types = ["m5.large"]
   disk_size = 100
   ami_type = "AL2_x86_64"
+
+  tags = {
+    "Name" = "custom-node-group"
+    "autodelete" = "no"
+  }
 
   depends_on = [
     aws_iam_role_policy_attachment.eks_node_group_AmazonEKSWorkerNodePolicy,

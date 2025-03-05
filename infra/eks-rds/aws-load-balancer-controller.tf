@@ -48,7 +48,6 @@ resource "helm_release" "aws_load_balancer_controller" {
     aws_eks_cluster.eks_cluster,
     aws_eks_node_group.custom_node_group,
     aws_iam_role.aws_load_balancer_controller_role,
-    kubernetes_config_map.aws_auth, # Ensure the aws-auth ConfigMap is created
   ]
 }
 
